@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ShopItem {
-  final String name;
-  final IconData icon;
-
-  ShopItem(this.name, this.icon);
-}
-
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
+
   final List<ShopItem> items = [
     ShopItem("Lihat Produk", Icons.checklist),
     ShopItem("Tambah Produk", Icons.add_shopping_cart),
@@ -27,8 +21,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor : Colors.indigo,
         title: const Text(
           'Shopping List',
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: SingleChildScrollView(
@@ -70,6 +66,13 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ShopItem {
+  final String name;
+  final IconData icon;
+
+  ShopItem(this.name, this.icon);
 }
 
 class ShopCard extends StatelessWidget {
